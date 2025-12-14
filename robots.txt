@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leviathanmrvoid-bit.github.io/sitemap.xml
