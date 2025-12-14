@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LEVIATANS — Architects of the Deep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="Leviatans is a secretive organization where future hackers, ethical prodigies and computer savants are forged through cryptographic riddles and digital trials." />
+  <meta name="keywords" content="Leviatans, hackers, ethical hacking, cybersecurity, puzzles, cryptography, cicada 3301" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #05070b;
+      --ink: #e6f1ff;
+      --muted: #7a8aa0;
+      --accent: #00e5ff;
+      --accent-2: #7c4dff;
+      --danger: #ff1744;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 50% -20%, #0b1220, var(--bg));
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Subtle noise */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      font-family: Orbitron, monospace;
+      letter-spacing: 4px;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    main {
+      padding: 120px 24px 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 120px;
+    }
+
+    .sigil {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 40px rgba(0,229,255,0.25);
+      cursor: pointer;
+    }
+
+    .sigil span {
+      font-family: Orbitron, monospace;
+      font-size: 42px;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-family: Orbitron, monospace;
+      letter-spacing: 6px;
+      font-size: 42px;
+      margin: 16px 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      font-family: Orbitron, monospace;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .cta:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 30px rgba(0,229,255,0.6);
+    }
+
+    section {
+      margin-bottom: 100px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      font-family: Orbitron, monospace;
+      color: var(--accent-2);
+      margin-top: 0;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Hidden terminal */
+    #terminal {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #00ff9c;
+      font-family: monospace;
+      padding: 24px;
+      display: none;
+      z-index: 999;
+    }
+
+    #terminal input {
+      background: transparent;
+      border: none;
+      color: #00ff9c;
+      outline: none;
+      width: 100%;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">LEVIATANS</div>
+  <nav>
+    <a href="#doctrine">Doctrine</a>
+    <a href="#paths">Paths</a>
+    <a href="#initiation">Initiation</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="sigil" id="sigil"><span>λ</span></div>
+    <h1>LEVIATANS</h1>
+    <p class="subtitle">
+      An underground organization forging the next generation of hackers, ethical operatives and computational prodigies.
+      Knowledge is not given. It is earned.
+    </p>
+    <a class="cta" href="#initiation">BEGIN INITIATION</a>
+  </section>
+
+  <section id="doctrine">
+    <div class="grid">
+      <div class="card">
+        <h3>OBSCURITY</h3>
+        <p>True knowledge survives only when hidden in plain sight.</p>
+      </div>
+      <div class="card">
+        <h3>MASTERY</h3>
+        <p>We train minds to understand systems, not just break them.</p>
+      </div>
+      <div class="card">
+        <h3>ETHICS</h3>
+        <p>Power without control is noise. Precision is law.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="paths">
+    <div class="grid">
+      <div class="card">
+        <h3>CRYPTOGRAPHY</h3>
+        <p>Ciphers, hashes, steganography, information concealment.</p>
+      </div>
+      <div class="card">
+        <h3>OFFENSIVE SECURITY</h3>
+        <p>Exploit development, red teaming, adversarial thinking.</p>
+      </div>
+      <div class="card">
+        <h3>DEFENSIVE SYSTEMS</h3>
+        <p>Blue teams, detection, resilience and digital survival.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="initiation">
+    <div class="card">
+      <h3>INITIATION PROTOCOL</h3>
+      <p>
+        Entry is not public. The sigil opens what the mind can perceive.
+        Those who see it will know what to do.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  LEVIATANS · Signum in Profundum · ©
+</footer>
+
+<!-- Hidden Terminal -->
+<div id="terminal">
+  <p>leviatans@void:~$ identify</p>
+  <input id="termInput" autofocus placeholder="type a command..." />
+</div>
+
+<script>
+  const sigil = document.getElementById('sigil');
+  const terminal = document.getElementById('terminal');
+  const input = document.getElementById('termInput');
+
+  let clicks = 0;
+  sigil.addEventListener('click', () => {
+    clicks++;
+    if (clicks === 7) {
+      terminal.style.display = 'block';
+      input.focus();
+    }
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      if (input.value.trim().toLowerCase() === 'initiate') {
+        input.value = 'ACCESS GRANTED';
+      } else {
+        input.value = 'UNKNOWN COMMAND';
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
